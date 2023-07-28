@@ -1,5 +1,17 @@
 <script>
 
+  var swach_name = $('.product-form__input').find("input[name='Color']:checked").val();
+  $('input[name="Color"]').parents('.product-form__input').find('.color-name').text(swach_name);
+  $('input[name="Color"]').on('change', function(e) {
+
+    e.preventDefault();
+    if ($(this).is(':checked')) {
+      var swach_name = $("input[name='Color']:checked").val();
+      $(this).parents('.product-form__input').find('.color-name').text(swach_name);
+    }
+  });
+
+
 $('.radio_item input[type="radio"]').on('click', function(){
   if($(this).is(':checked') ){
   }
